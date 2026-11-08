@@ -1,0 +1,14 @@
+<header class="site-head">
+  <div class="wrap-wide bar">
+    <a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+
+    <nav class="site-nav">
+      <a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="on"{% endif %}>홈</a>
+      <a href="{{ '/archive/' | relative_url }}"{% if page.url == '/archive/' %} class="on"{% endif %}>전체 글</a>
+      <a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} class="on"{% endif %}>소개</a>
+      <a href="{{ site.home_url }}">홈페이지</a>
+      <button class="theme-btn" id="themeBtn" type="button"
+              aria-label="밝은 화면과 어두운 화면 전환">◐</button>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,9 @@
+{%- comment -%}
+  주제 key(예: conference) → 한국어 이름(학회 기록).
+  사용: include catname.html key=post.cat
+{%- endcomment -%}
+{%- for g in site.data.categories -%}
+{%- for it in g.items -%}
+{%- if it.key == include.key -%}{{ it.label }}{%- endif -%}
+{%- endfor -%}
+{%- endfor -%}

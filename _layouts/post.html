@@ -1,0 +1,51 @@
+---
+layout: default
+---
+<article class="wrap">
+
+  <div class="post-head">
+    <div class="card-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y. %-m. %-d." }}</time>
+      {%- if page.cat %}
+      <a class="chip" href="{{ '/c/' | append: page.cat | append: '/' | relative_url }}">{% include catname.html key=page.cat %}</a>
+      {%- endif %}
+    </div>
+    <h1>{{ page.title }}</h1>
+  </div>
+
+  {%- if page.event or page.place or page.dates %}
+  <div class="where">
+    {%- if page.event %}<div><b>행사</b><span>{{ page.event }}</span></div>{% endif %}
+    {%- if page.place %}<div><b>장소</b><span>{{ page.place }}</span></div>{% endif %}
+    {%- if page.dates %}<div><b>기간</b><span>{{ page.dates }}</span></div>{% endif %}
+  </div>
+  {%- endif %}
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  <div class="post-foot">
+    {%- if page.tags and page.tags.size > 0 %}
+    <div class="tagrow">
+      {%- for t in page.tags %}<span class="tag">#{{ t }}</span>{% endfor %}
+    </div>
+    {%- endif %}
+
+    <div class="pager">
+      {%- if page.previous %}
+      <a href="{{ page.previous.url | relative_url }}">
+        <span class="lbl">이전 글</span>
+        <span class="ttl">{{ page.previous.title }}</span>
+      </a>
+      {%- endif %}
+      {%- if page.next %}
+      <a href="{{ page.next.url | relative_url }}">
+        <span class="lbl">다음 글</span>
+        <span class="ttl">{{ page.next.title }}</span>
+      </a>
+      {%- endif %}
+    </div>
+  </div>
+
+</article>

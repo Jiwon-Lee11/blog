@@ -1,0 +1,45 @@
+---
+layout: default
+title: 홈
+---
+<div class="wrap-wide">
+
+  <div class="hero">
+    <h1>적어두지 않으면 사라진다</h1>
+    <p>{{ site.description }}</p>
+  </div>
+
+  {%- for g in site.data.categories %}
+  <div class="sec-head">
+    <h2>{{ g.icon }} {{ g.label }}</h2>
+    <span class="en">{{ g.en }}</span>
+    <span class="blurb">{{ g.blurb }}</span>
+  </div>
+  <div class="cat-grid">
+    {%- for it in g.items %}
+    {%- assign n = site.posts | where: "cat", it.key | size %}
+    <a class="cat{% if n == 0 %} empty{% endif %}"
+       href="{{ '/c/' | append: it.key | append: '/' | relative_url }}">
+      {{ it.label }}<span class="n">{{ n }}</span>
+    </a>
+    {%- endfor %}
+  </div>
+  {%- endfor %}
+
+  <div class="sec-head">
+    <h2>최근 글</h2>
+    <span class="en">Recent</span>
+    {%- if site.posts.size > 8 %}
+    <span class="blurb"><a href="{{ '/archive/' | relative_url }}">전체 {{ site.posts | size }}개 보기 &rarr;</a></span>
+    {%- endif %}
+  </div>
+
+  {%- if site.posts.size > 0 %}
+  <ul class="post-list">
+    {%- for p in site.posts limit: 8 %}{% include post-card.html post=p %}{% endfor %}
+  </ul>
+  {%- else %}
+  <div class="empty-note">첫 글을 기다리는 중입니다.</div>
+  {%- endif %}
+
+</div>

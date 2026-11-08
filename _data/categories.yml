@@ -1,0 +1,52 @@
+# 주제 묶음. 순서가 그대로 화면 순서가 된다.
+# key 는 _posts 의 front matter `category:` 와 categories/<key>.md 파일명에 쓴다.
+- group: research
+  label: 연구
+  en: Research
+  icon: "🛰"
+  blurb: 학회에서 보고 들은 것, 읽은 논문, 쓰는 방법
+  items:
+    - { key: conference, label: 학회 기록,            en: Conferences }
+    - { key: papers,     label: 읽은 논문 정리,        en: Paper Notes }
+    - { key: writing,    label: 논문 쓰는 방법에 대하여, en: On Writing }
+    - { key: ai,         label: AI 활용법,            en: Working with AI }
+
+- group: study
+  label: 공부
+  en: Study
+  icon: "📚"
+  blurb: 교과서와 수업, 그리고 읽은 책
+  items:
+    - { key: textbooks,  label: 교과서 정리,       en: Textbooks }
+    - { key: courses,    label: 들은 수업들 정리,   en: Courses }
+    - { key: books,      label: 독서 기록,        en: Reading }
+
+- group: making
+  label: 만들기
+  en: Making
+  icon: "🎮"
+  blurb: 짜고 만들어 본 것들
+  items:
+    - { key: gamedev,    label: 게임개발,         en: Game Dev }
+
+- group: gear
+  label: 장비
+  en: Gear
+  icon: "🎒"
+  blurb: 사서 써 보고 남기는 기록
+  items:
+    - { key: office,     label: 사무용품,         en: Desk & Office }
+    - { key: hiking,     label: 등산용품,         en: Hiking }
+    - { key: camping,    label: 캠핑용품,         en: Camping }
+    - { key: fitness,    label: 운동용품,         en: Fitness }
+
+- group: life
+  label: 기록
+  en: Life
+  icon: "🗺"
+  blurb: 지나온 시간과 다녀온 곳
+  items:
+    - { key: school,     label: 학창시절,         en: School Days }
+    - { key: army,       label: 군대시절,         en: Army Days }
+    - { key: japan,      label: 일본 여행,        en: Japan }
+    - { key: abroad,     label: 해외 여행,        en: Abroad }

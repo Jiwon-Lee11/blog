@@ -1,0 +1,40 @@
+title: Jiwon Lee — Notes
+tagline: 연구·공부·장비·기록
+description: >-
+  학회와 논문, 읽은 책과 교과서, 장비와 여행 —
+  남겨두면 나중에 꺼내 볼 것들을 적어둡니다.
+author: Jiwon Lee
+lang: ko
+
+url: https://jiwon-lee11.github.io
+baseurl: /blog
+
+home_url: https://jiwon-lee11.github.io/
+
+permalink: /:year/:month/:day/:title/
+timezone: Asia/Tokyo
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  footnote_nr: 1
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

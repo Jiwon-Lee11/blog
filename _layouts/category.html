@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<div class="wrap">
+
+  <div class="hero">
+    <h1>{{ page.title }}</h1>
+    {%- if page.blurb %}
+    <p>{{ page.blurb }}</p>
+    {%- endif %}
+  </div>
+
+  {%- assign posts = site.posts | where: "cat", page.cat_key %}
+  {%- if posts.size > 0 %}
+  <ul class="post-list">
+    {%- for p in posts %}{% include post-card.html post=p %}{% endfor %}
+  </ul>
+  {%- else %}
+  <div class="empty-note">아직 이 주제로 쓴 글이 없습니다.</div>
+  {%- endif %}
+
+</div>
